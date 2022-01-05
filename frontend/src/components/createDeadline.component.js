@@ -24,7 +24,7 @@ export default class CreateDeadline extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/courses/')
+        axios.get('https://deadlinetracker-ali.herokuapp.com/courses/')
         .then(response => {
             if (response.data.length > 0) {
                 this.setState({
@@ -74,7 +74,7 @@ export default class CreateDeadline extends Component {
         }
 
         console.log(deadline); //make this submit to mogodb later
-        axios.post('http://localhost:5000/deadlines/add', deadline)
+        axios.post('https://deadlinetracker-ali.herokuapp.com/deadlines/add', deadline)
         .then(res => console.log(res.data))
 
         window.location = '/'; //takes them back to main page

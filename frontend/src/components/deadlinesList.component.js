@@ -34,7 +34,7 @@ export default class DeadlineList extends Component{
     }
 
     componentDidMount(){
-        axios.get('http://localhost:5000/deadlines/')
+        axios.get('https://deadlinetracker-ali.herokuapp.com/deadlines/')
         .then(response => {
             this.setState({deadlines: response.data})
         })
@@ -44,7 +44,7 @@ export default class DeadlineList extends Component{
     }
 
     deleteDeadline(id) {
-        axios.delete('http://localhost:5000/deadlines/'+id)
+        axios.delete('https://deadlinetracker-ali.herokuapp.com/deadlines/'+id)
         .then(res => console.log(res.data));
 
         this.setState({
