@@ -8,7 +8,6 @@ export default class EditDeadline extends Component {
     constructor(props){
         super(props);
 
-        this.onChangeCourse = this.onChangeCourse.bind(this);
         this.onChangeDescription = this.onChangeDescription.bind(this);
         this.onChangeWeight = this.onChangeWeight.bind(this);
         this.onChangeDueDate = this.onChangeDueDate.bind(this);
@@ -51,11 +50,6 @@ export default class EditDeadline extends Component {
 
     }
 
-    onChangeCourse(e){ 
-        this.setState({
-            course: e.target.value
-        });
-    }
 
     onChangeDescription(e){ 
         this.setState({
@@ -98,22 +92,15 @@ export default class EditDeadline extends Component {
             <div className="container">
                 <h3>Edit Deadline</h3>
                 <form onSubmit={this.onSubmit}>
+
                     <div className="form-group">
                         <label>Course: </label>
-                        <select ref="UserInput"
-                        required
-                        className="form-control"
-                        value={this.state.course}
-                        onChange ={this.onChangeCourse}>
-                        {
-                            this.state.courses.map(function(course){
-                                return <option
-                                key={course}
-                                value={course}>{course}
-                                </option>;
-                            })
-                        }
-                        </select>
+                        <input
+                            type="text"
+                            readOnly
+                            className="form-control"
+                            value={this.state.course}
+                        />
                     </div>
 
                     <div className="form-group">
@@ -124,7 +111,7 @@ export default class EditDeadline extends Component {
                             className="form-control"
                             value={this.state.description}
                             onChange={this.onChangeDescription}
-                            />
+                        />
                     </div>
 
                     <div className="form-group">
@@ -134,7 +121,7 @@ export default class EditDeadline extends Component {
                             className="form-control"
                             value={this.state.weight}
                             onChange={this.onChangeWeight}
-                            />
+                        />
                     </div>
 
                     <div className = "form-group">
@@ -144,7 +131,7 @@ export default class EditDeadline extends Component {
                             <DatePicker
                                 selected={this.state.dueDate}
                                 onChange={this.onChangeDueDate}
-                            />
+                        />
                         </div>                    
                     </div>
                     <br/>
@@ -153,7 +140,7 @@ export default class EditDeadline extends Component {
                             type="submit" 
                             value="Edit Deadline" 
                             className="btn btn-primary" 
-                        />
+                    />
                     </div>
                 </form>
             </div>
