@@ -73,7 +73,7 @@ export default class CreateDeadline extends Component {
             dueDate: this.state.dueDate
         }
 
-        console.log(deadline); //make this submit to mogodb later
+        console.log(deadline); 
         axios.post('https://deadlinetracker-ali.herokuapp.com/deadlines/add', deadline)
         .then(res => console.log(res.data))
 

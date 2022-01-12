@@ -18,7 +18,6 @@ const Deadline = props => (
             <button onClick={() => {props.deleteDeadline(props.deadline._id) }} style={{marginLeft: "2px", padding: "4px", borderRadius: "5px"}}>
                 delete
             </button>
-            {/* <Link to={"/edit/"+props.deadline._id}>edit</Link> | <a href="#" onClick={() => {props.deleteDeadline(props.deadline._id) }}> delete</a> */}
         </td>
     </tr>
 )
