@@ -28,7 +28,7 @@ export default class CreateUser extends Component{
         }
 
         console.log(CourseVar); //make this submit to mogodb later
-        axios.post('https://deadlinetracker-ali.herokuapp.com/courses/add', CourseVar)
+        axios.post('https://deadlinetracker-backend.onrender.com/courses/add', CourseVar)
         .then(res => console.log(res.data))
 
         window.location = '/'; //takes them back to main page

@@ -33,7 +33,7 @@ export default class DeadlineList extends Component{
     }
 
     componentDidMount(){
-        axios.get('https://deadlinetracker-ali.herokuapp.com/deadlines/')
+        axios.get('https://deadlinetracker-backend.onrender.com/deadlines/')
         .then(response => {
             this.setState({deadlines: response.data})
         })
@@ -43,7 +43,7 @@ export default class DeadlineList extends Component{
     }
 
     deleteDeadline(id) {
-        axios.delete('https://deadlinetracker-ali.herokuapp.com/deadlines/'+id)
+        axios.delete('https://deadlinetracker-backend.onrender.com/deadlines/'+id)
         .then(res => console.log(res.data));
 
         this.setState({
