@@ -74,10 +74,15 @@ export default class CreateDeadline extends Component {
         }
 
         console.log(deadline); 
-        axios.post('https://deadlinetracker-backend.onrender.com/deadlines/add', deadline)
-        .then(res => console.log(res.data))
 
-        window.location = '/'; //takes them back to main page
+        axios.post('https://deadlinetracker-backend.onrender.com/deadlines/add', deadline)
+        .then(res => {
+            console.log(res.data);
+            window.location = '/';
+        })
+        .catch(error => {
+            console.error(error.response?.data || error.message);
+        });
     }
 
 
