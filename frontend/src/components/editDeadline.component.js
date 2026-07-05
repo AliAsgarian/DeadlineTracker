@@ -81,9 +81,13 @@ export default class EditDeadline extends Component {
 
         console.log(deadline); 
         axios.post('https://deadlinetracker-backend.onrender.com/deadlines/update/' + this.props.match.params.id, deadline)
-        .then(res => console.log(res.data))
-
-        window.location = '/'; //takes them back to main page
+        .then(res => {
+            console.log(res.data);
+            window.location = '/';
+        })
+        .catch(error => {
+            console.error(error.response?.data || error.message);
+        });
     }
 
 
